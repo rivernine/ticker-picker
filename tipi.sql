@@ -10,6 +10,18 @@ CREATE TABLE boll  (
   primary key (ticker, date)
 ) engine = InnoDB;
 
+CREATE TABLE stocks_price (
+  date    date,
+  ticker  varchar(10),
+  open   bigint,
+  high    bigint,
+  low     bigint,
+  close   bigint,
+  volume  bigint,
+  primary key (ticker, date)
+) engine = InnoDB;
+
+
 -- Pick
 SELECT T12.*, boll.close, boll.low, boll.medium, boll.high
 FROM (
