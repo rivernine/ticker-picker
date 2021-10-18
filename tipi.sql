@@ -1,4 +1,13 @@
 -- Create Table 
+CREATE TABLE mfi (
+  date      date,
+  ticker    varchar(10),
+  period    int,
+  mfi double,
+  z_score   double,
+  primary key (ticker, date, period)
+) engine = InnoDB;
+
 CREATE TABLE z_score  (
   date      date,
   ticker    varchar(10),
