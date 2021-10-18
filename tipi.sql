@@ -1,12 +1,21 @@
 -- Create Table 
+CREATE TABLE z_score  (
+  date      date,
+  ticker    varchar(10),
+  period    int,
+  bandWidth double,
+  z_score   double,
+  primary key (ticker, date, period)
+) engine = InnoDB;
+
 CREATE TABLE boll  (
-  date    date,
-  ticker  varchar(10),
-  name    varchar(255),
-  close   bigint,
-  low     bigint,
-  medium  bigint,
-  high    bigint,
+  date      date,
+  ticker    varchar(10),
+  close     bigint,
+  low       bigint,
+  medium    bigint,
+  high      bigint,
+  bandWidth double,
   primary key (ticker, date)
 ) engine = InnoDB;
 
@@ -21,6 +30,22 @@ CREATE TABLE stocks_price (
   primary key (ticker, date)
 ) engine = InnoDB;
 
+-- 최근 n일 간 볼린저밴드 조회
+SELECT *
+FROM boll
+WHERE ticker = '005930'
+AND date <= '20211018'
+ORDER BY date DESC
+LIMIT n;
+
+
+-- 최근 20일 간 내역 조회
+SELECT *
+FROM stocks_price
+WHERE ticker = '005930'
+AND date <= '20211018'
+ORDER BY date DESC
+LIMIT 20;
 
 -- Pick
 SELECT T12.*, boll.close, boll.low, boll.medium, boll.high
