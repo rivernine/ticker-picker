@@ -3,8 +3,8 @@ CREATE TABLE mfi (
   date      date,
   ticker    varchar(10),
   period    int,
-  mfi double,
-  z_score   double,
+  tp        bigint,
+  mfi       double,
   primary key (ticker, date, period)
 ) engine = InnoDB;
 
@@ -25,6 +25,7 @@ CREATE TABLE boll  (
   medium    bigint,
   high      bigint,
   bandWidth double,
+  position  double,
   primary key (ticker, date)
 ) engine = InnoDB;
 
