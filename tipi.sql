@@ -80,3 +80,37 @@ JOIN boll
 ON (T12.ticker = boll.ticker)
 WHERE boll.close < boll.low
 LIMIT 10;
+
+SELECT BOLMFIZSCO.*, INFO.name, INFO.market, INFO.cap
+FROM (
+  SELECT BOLMFI.*, ZSCO.z_score
+  FROM (
+    SELECT BOL.*, MFI.tp, MFI.mfi
+    FROM (
+      SELECT * 
+      FROM boll 
+      WHERE date = '20210104'
+    ) AS BOL
+    JOIN (
+      SELECT ticker, tp, mfi
+      FROM mfi
+      WHERE date = '20210104'
+      AND period = 10
+    ) AS MFI
+    ON (BOL.ticker = MFI.ticker)
+  ) AS BOLMFI
+  JOIN (
+    SELECT ticker, z_score
+    FROM z_score
+    WHERE date = '20210104'
+    AND period = 180
+  ) AS ZSCO
+  ON (BOLMFI.ticker = ZSCO.ticker)
+) AS BOLMFIZSCO
+JOIN (
+  SELECT ticker, name, market, cap
+  FROM stocks_info
+) AS INFO
+ON (BOLMFIZSCO.ticker = INFO.ticker)
+ORDER BY cap DESC
+;
