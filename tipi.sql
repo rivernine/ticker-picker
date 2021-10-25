@@ -115,3 +115,28 @@ JOIN (
 ON (BOLMFIZSCO.ticker = INFO.ticker)
 ORDER BY cap DESC
 ;
+
+SELECT BOLMFI.*, INFO.name, INFO.market, INFO.cap
+FROM (
+  SELECT BOL.*, MFI.tp, MFI.mfi
+  FROM (
+    SELECT  
+    FROM boll 
+    WHERE date = '20190102'
+    AND period = 20
+  ) AS BOL
+  JOIN (
+    SELECT ticker, tp, mfi
+    FROM mfi
+    WHERE date = '20190102'
+    AND period = 10
+  ) AS MFI
+  ON (BOL.ticker = MFI.ticker)
+) AS BOLMFI
+JOIN (
+  SELECT ticker, name, market, cap
+  FROM stocks_info
+  WHERE cap > 10
+) AS INFO
+ON (BOLMFI.ticker = INFO.ticker)
+ORDER BY INFO.cap DESC
