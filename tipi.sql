@@ -20,13 +20,14 @@ CREATE TABLE z_score  (
 CREATE TABLE boll  (
   date      date,
   ticker    varchar(10),
+  period    int,
   close     bigint,
   low       bigint,
   medium    bigint,
   high      bigint,
   bandWidth double,
   position  double,
-  primary key (ticker, date)
+  primary key (ticker, date, period)
 ) engine = InnoDB;
 
 CREATE TABLE stocks_price (
