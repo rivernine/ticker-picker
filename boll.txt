@@ -1,98 +1,108 @@
-'position_bid': [0.2],
-'position_ask': [0.8],
-'mfi_bid': [20],
-'mfi_ask': [80],
-
--49.904139291360984 -1247603.4822840244 0.5
-4 2021-06-01
-
------------------------------------------------
-
-position_bid': [0.2],
-'position_ask': [0.8],
-'mfi_bid': [20],
-'mfi_ask': [80],
-
-58.001408531752084 580014.0853175207 0.6428571428571429
-10 2021-06-01
-
------------------------------------------------
-'position_bid': [0.2],
-'position_ask': [0.8],
-'mfi_bid': [20],
-'mfi_ask': [80],
-'lossCutPnl': [-10],
-
--84.49465482908938 -844946.5482908939 0.5102040816326531
-10 2021-06-01
-
------------------------------------------------
-'position_bid': [0.2],
-'position_ask': [0.8],
-'mfi_bid': [20],
-'mfi_ask': [80],
-'lossCutPnl': [-15],
-
--72.29261697981866 -722926.169798187 0.5526315789473685
-10 2021-06-01
-
------------------------------------------------
-'position_bid': [0.2],
-'position_ask': [0.8],
-'mfi_bid': [20],
-'mfi_ask': [80],
-
-58.001408531752084 580014.0853175207 0.6428571428571429
-10 2021-06-01
-
------------------------------------------------
-position_bid': [0.1],
-'position_ask': [0.9],
-'mfi_bid': [10],
-'mfi_ask': [90],
-126.77651898108117 1267765.1898108118 0.8823529411764706
-10 2021-06-09
-
------------------------------------------------
-start = "20210101"
-end = "20211022"
-
-'position_bid': [0.1],
-'position_ask': [0.9],
-'mfi_bid': [10],
-'mfi_ask': [90],
-203.89851193660203 2038985.119366021 0.7209302325581395
-10 2021-01-07
-
------------------------------------------------
-start = "20210101"
-end = "20211022"
-
-'position_bid': [0.1],
-'position_ask': [0.9],
-'mfi_bid': [10],
-'mfi_ask': [90],
-'lossCutPnl': [-20],
-
--91.29005346006724 -912900.5346006724 0.5409836065573771
-10 2021-01-07
-
-------------------------------------------------
-'position_bid': [0.1],
-'position_ask': [0.9],
-'mfi_bid': [10],
-'mfi_ask': [90],
-'minCap': [500000000000]
-
-257.2352414369942 2572352.414369941 0.8125
-10 2021-01-19
-
-------------------------------------------------
-'position_bid': [0.1],
-'position_ask': [0.9],
-'mfi_bid': [10],
-'mfi_ask': [90],
-'minCap': [1000000000000]
-
-192.8111100214091 1928111.1002140911 0.8571428571428571
-10 2021-01-28
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 3382916.209275938, 0.8260869565217391]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 3147290.9946224596, 0.7755102040816326]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2985173.3344022073, 0.74]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2871507.410104498, 0.7954545454545454]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2818391.1566198086, 0.7959183673469388]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2772274.9825282576, 0.8157894736842105]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2759272.1134587913, 0.75]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2611776.042087167, 0.8181818181818182]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2575240.9638527287, 0.7407407407407407]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2558890.9235871853, 0.8529411764705882]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2535810.842351533, 0.7272727272727273]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2524583.999341551, 0.7894736842105263]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2474673.2171596033, 0.6888888888888889]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2366805.8197084293, 0.75]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2355828.916929093, 0.7446808510638298]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2353280.9641097644, 0.723404255319149]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2353030.482750937, 0.7777777777777778]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2301047.246871677, 0.72]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2288845.2387657207, 0.8125]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2257531.0488495156, 0.7142857142857143]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2246289.1699241297, 0.7878787878787878]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2210187.9584616506, 0.875]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2201319.5341419983, 0.75]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2157749.957921873, 0.7317073170731707]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2149033.5069043306, 0.7435897435897436]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2124370.8844181863, 0.7666666666666667]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2111735.683489366, 0.7241379310344828]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2028105.2152688985, 0.7818181818181819]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2021777.6828830086, 0.7105263157894737]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 2005371.687554917, 0.6666666666666666]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1997711.0280639492, 0.74]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1968028.614703926, 0.7142857142857143]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1959331.0171756812, 0.7666666666666667]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1934282.741579615, 0.7692307692307693]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1933029.2085016288, 0.7111111111111111]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1930370.0637980567, 0.7631578947368421]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1909906.231616482, 0.7142857142857143]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1909654.8280302326, 0.7380952380952381]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1898801.8817149147, 0.7692307692307693]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1890040.6166640504, 0.7368421052631579]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1886544.5244371835, 0.7368421052631579]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1878213.0867697273, 0.7560975609756098]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1861041.3145734984, 0.7142857142857143]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1844790.3236797987, 0.8]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1817538.1341458678, 0.7346938775510204]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1806692.2106671694, 0.7073170731707317]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1795128.8875473079, 0.717948717948718]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1781891.563274094, 0.7407407407407407]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1759605.8211011938, 0.8]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1740721.1623999858, 0.8285714285714286]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1724823.6898408886, 0.7346938775510204]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1696897.031320837, 0.75]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1662743.9850821411, 0.7631578947368421]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1662451.185664014, 0.6521739130434783]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1637319.3780703822, 0.75]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1636946.5504343305, 0.6976744186046512]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1634325.508707445, 0.7719298245614035]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1633741.9267680265, 0.7441860465116279]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1624490.0640997216, 0.7692307692307693]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1609070.5969710934, 0.7209302325581395]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1551446.9822789095, 0.6774193548387096]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1524204.7806626118, 0.7333333333333333]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1503812.4328942706, 0.72]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1479357.0502129805, 0.7608695652173914]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1441015.6303756358, 0.7647058823529411]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 500000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1424026.0063021674, 0.7142857142857143]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1413021.1682201126, 0.8]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1310964.2934623766, 0.7586206896551724]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1295754.059532023, 0.6571428571428571]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1274275.6534423768, 0.7619047619047619]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1270003.1644440074, 0.6875]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1170356.4761659577, 0.7105263157894737]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1131331.1089127392, 0.6571428571428571]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1124131.6211147886, 0.6666666666666666]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 1065389.5482487138, 0.6976744186046512]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 973776.5261917158, 0.6923076923076923]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 815045.9001337066, 0.6428571428571429]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 694438.870480549, 0.6956521739130435]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 1000000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 629993.1062900873, 0.65625]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 269422.46844991576, 0.6274509803921569]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 131423.55956257108, 0.6842105263157895]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, 102729.50155605096, 0.6]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -63520.43112620793, 0.6470588235294118]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -301133.8946093802, 0.7307692307692307]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -310955.3662034964, 0.717391304347826]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -781664.4997106387, 0.72]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -855277.7255838625, 0.56]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -910750.7023313806, 0.6341463414634146]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -938000.0172181767, 0.625]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -985448.3491953893, 0.5416666666666666]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1083843.9244371224, 0.5]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1302158.1697431507, 0.6458333333333334]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1308561.184585125, 0.6041666666666666]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1396037.229025658, 0.5555555555555556]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 20, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1436721.4072370506, 0.5106382978723404]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1447537.8670443082, 0.625]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1531368.5344787682, 0.5769230769230769]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 20, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1533396.821130775, 0.6410256410256411]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1609225.1849624054, 0.6571428571428571]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1634947.2443539521, 0.5217391304347826]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1730100.945489672, 0.5641025641025641]
+[{'market': 'KOSPI', 'position_bid': 0.1, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -1798379.899678291, 0.5151515151515151]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -2060692.2657904183, 0.5434782608695652]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.8, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -2072377.6330017343, 0.6086956521739131]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -2173653.2825455763, 0.47368421052631576]
+[{'market': 'KOSPI', 'position_bid': 0.0, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 80, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -2341276.313817764, 0.5227272727272727]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 0.9, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -2345658.767179041, 0.5263157894736842]
+[{'market': 'KOSPI', 'position_bid': 0.2, 'position_ask': 1.0, 'mfi_bid': 10, 'mfi_ask': 90, 'boll_period': 20, 'mfi_period': 10, 'minCap': 100000000000, 'z_score': -1.5, 'maxPnl': 100, 'lossCutPnl': -20, 'z_score_period': 180}, -2566691.7601807606, 0.5454545454545454]

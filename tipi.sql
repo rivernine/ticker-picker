@@ -5,6 +5,7 @@ CREATE TABLE mfi (
   period    int,
   tp        bigint,
   mfi       double,
+  mfi_diff  double,
   primary key (ticker, date, period)
 ) engine = InnoDB;
 
