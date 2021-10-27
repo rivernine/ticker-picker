@@ -121,7 +121,7 @@ SELECT BOLMFI.*, INFO.name, INFO.market, INFO.cap
 FROM (
   SELECT BOL.*, MFI.tp, MFI.mfi
   FROM (
-    SELECT  
+    SELECT *
     FROM boll 
     WHERE date = '20190102'
     AND period = 20
