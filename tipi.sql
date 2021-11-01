@@ -1,4 +1,11 @@
 -- Create Table 
+CREATE TABLE cap (
+  ticker    varchar(10),
+  close     bigint,
+  cap       bigint,
+  primary key (ticker)
+) engine = InnoDB;
+
 CREATE TABLE mfi (
   date      date,
   ticker    varchar(10),
