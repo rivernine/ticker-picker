@@ -25,7 +25,7 @@ db.commit()
 
 # 1.1 시가총액 업데이트
 print("1.1. 시가총액 업데이트")
-capDf = stock.get_market_cap_by_ticker('20211031')
+capDf = stock.get_market_cap_by_ticker('20211031', market='KOSPI')
 capDf.index.names = ['ticker']
 capDf = capDf.rename(columns={'종가':'close', '시가총액':'cap'}).drop(['거래량', '거래대금', '상장주식수'], axis=1)
 capDf = capDf[capDf['cap'] >= 500000000000]
