@@ -15,7 +15,7 @@ db = pymysql.connect(host=ADDR, port=int(PORT), user=ID, passwd=PW, db=DB, chars
 cursor = db.cursor()
 
 ### 1. 종목정보덤프
-print(">> 1. 시가총액 5천억 이상 ticker 덤프")
+print(">> 1. 시가총액 5천억 이상 & KOSPI 티커 덤프")
 
 # 1.0. 기존 데이터 제거
 print("1.0. 기존 데이터 제거")
@@ -25,19 +25,26 @@ db.commit()
 
 # 1.1 시가총액 업데이트
 print("1.1. 시가총액 업데이트")
-capDf = stock.get_market_cap_by_ticker('20211031', market='KOSPI')
+# 1.1.1. 매수종목조회
+print("1.1.1. 매수종목조회")
+cursor.execute("SELECT ticker FROM bid_basket")
+basketTickers = list(map(lambda x: x[0], cursor.fetchall()))
+# 1.1.2. 최신데이터call
+print("1.1.2. 최신데이터call")
+capDf = stock.get_market_cap_by_ticker(str(datetime.now().date()).replace('-', ''), market='KOSPI')
 capDf.index.names = ['ticker']
 capDf = capDf.rename(columns={'종가':'close', '시가총액':'cap'}).drop(['거래량', '거래대금', '상장주식수'], axis=1)
+basketDf = capDf.loc[basketTickers].copy()
 capDf = capDf[capDf['cap'] >= 500000000000]
+totalDf = pd.concat([basketDf,capDf]).drop_duplicates()
 db_connection = create_engine('mysql+pymysql://'+ ID +':'+ PW +'@'+ ADDR +':'+ PORT +'/'+ DB, encoding='utf-8', pool_pre_ping=True)
 conn = db_connection.connect()
-capDf.to_sql(name='cap', con=db_connection, if_exists='append', index=True, index_label="ticker")
+totalDf.to_sql(name='cap', con=db_connection, if_exists='append', index=True, index_label="ticker")
 conn.close()
-#### > 구매한 티커는 별도로 관리
 
 # 1.2. 티커리스트 조회
 print("1.2. 티커리스트 조회")
-cursor.execute("SELECT ticker FROM cap WHERE cap >= '500000000000'")
+cursor.execute("SELECT ticker FROM cap")
 tickers = list(map(lambda x: x[0], cursor.fetchall()))
 db.close()
 

@@ -1,4 +1,25 @@
 -- Create Table 
+CREATE TABLE history (
+  date          date,
+  ticker        varchar(10),
+  status        varchar(10),
+  bid_price     bigint,
+  ask_price     bigint,
+  pnl           double,
+  realized_pnl  double,
+  primary key(date, ticker, status)
+) engine = InnoDB;
+
+CREATE TABLE bid_basket (
+  date          date,
+  ticker        varchar(10),
+  price     bigint,
+  volume        bigint
+  mfi       double,
+  position  double,  
+  primary key (ticker, date)
+) engine = InnoDB;
+
 CREATE TABLE cap (
   ticker    varchar(10),
   close     bigint,
@@ -148,3 +169,28 @@ JOIN (
 ) AS INFO
 ON (BOLMFI.ticker = INFO.ticker)
 ORDER BY INFO.cap DESC
+
+SELECT BOLMFI.*, CAP.cap
+FROM (
+  SELECT BOL.*, MFI.tp, MFI.mfi, MFI.mfi_diff
+  FROM (
+    SELECT * 
+    FROM boll 
+    WHERE date = "2021-11-02"
+    AND period = 20
+  ) AS BOL
+  JOIN (
+    SELECT ticker, tp, mfi, mfi_diff
+    FROM mfi
+    WHERE date = "2021-11-02"
+    AND period = 10
+  ) AS MFI
+  ON (BOL.ticker = MFI.ticker)
+) AS BOLMFI
+JOIN (
+  SELECT ticker, cap
+  FROM cap
+) AS CAP
+ON (BOLMFI.ticker = CAP.ticker)
+ORDER BY CAP.cap DESC
+LIMIT 10;
