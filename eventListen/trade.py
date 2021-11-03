@@ -36,7 +36,7 @@ kiwoom_conn = kiwoom.create_connect()
 # 0.1. 주문가능금액조회
 print("\n0.1. Get my amount")
 my_amount = kiwoom.get_amount(kiwoom_conn)
-print("My amount: %s원" %(my_amount))
+print("My amount: %s" %(my_amount))
 
 ### 1. 종목(cap >= 5천억 && KOSPI)조회 및 거래
 print("\n>> 1. Get ticker(cap >= 500000000000 && KOSPI) & Trade")
@@ -56,7 +56,7 @@ if len(basketDf) > 0:
 print("\n1.1. Set the date")
 date = str(datetime.now().date()).replace('-', '')
 # date = "20211029"
-print("기간: (%s)" %(date))
+print("Date: (%s)" %(date))
 
 try:
   # 1.2. 티커별 종합정보조회

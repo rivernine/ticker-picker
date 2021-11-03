@@ -5,16 +5,16 @@ CREATE TABLE history (
   status        varchar(10),
   bid_price     bigint,
   ask_price     bigint,
+  volume        bigint,
   pnl           double,
-  realized_pnl  double,
-  primary key(date, ticker, status)
+  realized_pnl  double
 ) engine = InnoDB;
 
 CREATE TABLE bid_basket (
-  date          date,
-  ticker        varchar(10),
+  date      date,
+  ticker    varchar(10),
   price     bigint,
-  volume        bigint
+  volume    bigint,
   mfi       double,
   position  double,  
   primary key (ticker, date)
@@ -176,13 +176,13 @@ FROM (
   FROM (
     SELECT * 
     FROM boll 
-    WHERE date = "2021-11-02"
+    WHERE date >= "20211101"
     AND period = 20
   ) AS BOL
   JOIN (
     SELECT ticker, tp, mfi, mfi_diff
     FROM mfi
-    WHERE date = "2021-11-02"
+    WHERE date >= "20211101"
     AND period = 10
   ) AS MFI
   ON (BOL.ticker = MFI.ticker)
@@ -192,5 +192,36 @@ JOIN (
   FROM cap
 ) AS CAP
 ON (BOLMFI.ticker = CAP.ticker)
+WHERE mfi <= 10
+AND position <= 0.1
+AND mfi_diff > 0
 ORDER BY CAP.cap DESC
 LIMIT 10;
+
+
+SELECT BOLMFI.*, CAP.cap   
+FROM (    
+  SELECT BOL.*, MFI.tp, MFI.mfi, MFI.mfi_diff     
+  FROM (       
+    SELECT *       
+    FROM boll       
+    WHERE date = "20211103"       
+    AND period = 20     
+    ) AS BOL     
+JOIN (       
+  SELECT ticker, tp, mfi, mfi_diff       
+  FROM mfi       
+  WHERE date = "20211103"       
+  AND period = 10     
+  ) AS MFI     
+ON (BOL.ticker = MFI.ticker)   
+) AS BOLMFI   
+JOIN (     
+  SELECT ticker, cap     
+  FROM cap   
+) AS CAP   
+ON (BOLMFI.ticker = CAP.ticker) 
+WHERE BOLMFI.mfi <= 10
+AND BOLMFI.position <= 0.1
+AND BOLMFI.mfi_diff > 0
+ORDER BY CAP.cap DESC;
