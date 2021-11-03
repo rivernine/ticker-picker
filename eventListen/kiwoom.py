@@ -19,27 +19,27 @@ def get_amount(kiwoom):
                           )
   return int(df['주문가능금액'][0])
 
-def bid_limit(kiwoom, ticker, volume, price):
+def bid_limit(kiwoom, tx_count, ticker, volume, price):
   print("지정가매수를 진행합니다.")
   accounts = kiwoom.GetLoginInfo("ACCNO")
   stock_account = accounts[0]
-  return kiwoom.SendOrder("지정가매수", "0101", stock_account, 1, ticker, volume, price, "00", "")   
+  return kiwoom.SendOrder("지정가매수", str(tx_count).zfill(4), stock_account, 1, ticker, volume, price, "00", "")   
 
-def bid_market(kiwoom, ticker, volume):
+def bid_market(kiwoom, tx_count, ticker, volume):
   print("시장가매수를 진행합니다.")
   accounts = kiwoom.GetLoginInfo("ACCNO")
   stock_account = accounts[0]
-  return kiwoom.SendOrder("시장가매수", "0101", stock_account, 1, ticker, volume, 0, "03", "")
+  return kiwoom.SendOrder("시장가매수", str(tx_count).zfill(4), stock_account, 1, ticker, volume, 0, "03", "")
 
-def ask_limit(kiwoom, ticker, volume, price):
+def ask_limit(kiwoom, tx_count, ticker, volume, price):
   print("지정가매도를 진행합니다.")
   accounts = kiwoom.GetLoginInfo("ACCNO")
   stock_account = accounts[0]
-  return kiwoom.SendOrder("지정가매도", "0101", stock_account, 2, ticker, volume, price, "00", "")
+  return kiwoom.SendOrder("지정가매도", str(tx_count).zfill(4), stock_account, 2, ticker, int(volume), price, "00", "")
 
-def ask_market(kiwoom, ticker, volume):
+def ask_market(kiwoom, tx_count, ticker, volume):
   print("시장가매도를 진행합니다.")
   accounts = kiwoom.GetLoginInfo("ACCNO")
   stock_account = accounts[0]
-  return kiwoom.SendOrder("시장가매도", "0101", stock_account, 2, ticker, volume, 0, "03", "")
+  return kiwoom.SendOrder("시장가매도", str(tx_count).zfill(4), stock_account, 2, ticker, int(volume), 0, "03", "")
 
