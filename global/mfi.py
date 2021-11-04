@@ -7,7 +7,7 @@ from datetime import datetime
 
 ADDR = '192.168.56.100'
 PORT = '3306'
-DB = 'INDEX_DUCK'
+DB = 'GLOBAL'
 ID = 'root'
 PW = 'root'
 
@@ -22,35 +22,33 @@ print("3.0. Delete old data")
 cursor.execute("TRUNCATE mfi")
 db.commit()
 
-# 3.1. 티커리스트 조회
-print("3.1. Get ticker list")
-cursor.execute("SELECT DISTINCT ticker FROM stocks_price")
-tickers = list(map(lambda x: x[0], cursor.fetchall()))
+# 2.1. 심볼리스트 조회
+print("2.1. Get symbol list")
+cursor.execute("SELECT DISTINCT symbol FROM stocks_price")
+symbols = list(map(lambda x: x[0], cursor.fetchall()))
 
-# 3.2. 기간 설정
-print("3.2. Set period")
-start = '20210601'
+# 2.2. 기간 설정
+print("2.2. Set period")
+start = '20210801'
 end = str(datetime.now().date()).replace('-', '')
-print("period: (%s - %s)" %(start, end))
+print("Period: (%s - %s)" %(start, end))
 
 # 3.3. 새로운 데이터 업데이트
-print("3.3. Update new data (%s - %s)" %(start, end))
+print("2.3. Update new data (%s - %s)" %(start, end))
 day = 10
-for ticker in tickers:
+for symbol in symbols:
   try:
-    # Get ticker's price
-    cursor.execute("SELECT * FROM stocks_price WHERE ticker = '" + ticker + "' ORDER BY date DESC")
+    cursor.execute("SELECT * FROM stocks_price WHERE symbol = '" + symbol + "' ORDER BY date DESC")
     priceDf = pd.DataFrame(cursor.fetchall())
-    priceDf = priceDf.rename(columns={0: 'date', 1:'ticker', 2:'open', 3:'high', 4:'low', 5:'close', 6:'volume'})
+    priceDf = priceDf.rename(columns={0: 'date', 1:'symbol', 2:'open', 3:'high', 4:'low', 5:'close', 6:'volume'})
     # Set Dataframe
-    priceDf['period'] = day
-    priceDf['tp'] = 0
-    priceDf['mfi'] = 0
-    priceDf['mfi_diff'] = 0
+    priceDf['tp'] = 0.0
+    priceDf['mfi'] = 0.0
+    priceDf['mfi_diff'] = 0.0
     # Set typical price
     for idx in range(0, len(priceDf)):
       row = priceDf.iloc[idx]
-      priceDf.at[idx, 'tp'] = round((row['high'] + row['low'] + row['close']) / 3)
+      priceDf.at[idx, 'tp'] = (row['high'] + row['low'] + row['close']) / 3
     # Set MFI
     for idx in range(0, len(priceDf)):
       if idx + day > len(priceDf) - 1:
@@ -64,7 +62,7 @@ for ticker in tickers:
           positiveRMF += today['tp'] * today['volume']
         elif today['tp'] < yesterday['tp']:
           negativeRMF += today['tp'] * today['volume']
-      MFI = round(positiveRMF / (positiveRMF + negativeRMF) * 100)
+      MFI = positiveRMF / (positiveRMF + negativeRMF) * 100
       priceDf.at[idx, 'mfi'] = MFI
       if idx > 0:
         priceDf.at[idx - 1, 'mfi_diff'] = priceDf.iloc[idx - 1]['mfi'] - MFI
@@ -74,6 +72,6 @@ for ticker in tickers:
     mfiDf.to_sql(name='mfi', con=db_connection, if_exists='append', index=True, index_label="date")        
     conn.close()
   except Exception as ex1:
-    print('ex1', ex1, ticker)
+    print('ex1', ex1, symbol)
     pass
 db.close()

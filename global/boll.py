@@ -4,10 +4,11 @@ import pandas as pd
 from pykrx import stock
 import time
 from datetime import datetime
+import traceback
 
 ADDR = '192.168.56.100'
 PORT = '3306'
-DB = 'INDEX_DUCK'
+DB = 'GLOBAL'
 ID = 'root'
 PW = 'root'
 
@@ -22,28 +23,26 @@ print("2.0. Delete old data")
 cursor.execute("TRUNCATE boll")
 db.commit()
 
-# 2.1. 티커리스트 조회
-print("2.1. Get ticker list")
-cursor.execute("SELECT DISTINCT ticker FROM stocks_price")
-tickers = list(map(lambda x: x[0], cursor.fetchall()))
+# 2.1. 심볼리스트 조회
+print("2.1. Get symbol list")
+cursor.execute("SELECT DISTINCT symbol FROM stocks_price")
+symbols = list(map(lambda x: x[0], cursor.fetchall()))
 
 # 2.2. 기간 설정
 print("2.2. Set period")
-start = '20210601'
+start = '20210801'
 end = str(datetime.now().date()).replace('-', '')
-print("period: (%s - %s)" %(start, end))
+print("Period: (%s - %s)" %(start, end))
 
 # 2.3. 새로운 데이터 업데이트
 print("2.3. Update new data (%s - %s)" %(start, end))
 day = 20
-for ticker in tickers:
+for symbol in symbols:
   try:
-    # Get ticker's price
-    cursor.execute("SELECT * FROM stocks_price WHERE ticker = '" + ticker + "' ORDER BY date DESC")
+    cursor.execute("SELECT * FROM stocks_price WHERE symbol = '" + symbol + "' ORDER BY date DESC")
     priceDf = pd.DataFrame(cursor.fetchall())
-    priceDf = priceDf.rename(columns={0: 'date', 1:'ticker', 2:'open', 3:'high', 4:'low', 5:'close', 6:'volume'}).drop(['open', 'high', 'low', 'volume'], axis=1)
+    priceDf = priceDf.rename(columns={0: 'date', 1:'symbol', 2:'open', 3:'high', 4:'low', 5:'close', 6:'volume'}).drop(['open', 'high', 'low', 'volume'], axis=1)
     # Set Dataframe
-    priceDf['period'] = day
     priceDf['low'] = 0
     priceDf['medium'] = 0
     priceDf['high'] = 0
@@ -57,9 +56,9 @@ for ticker in tickers:
       avg = copyDf.mean()
       std = copyDf.std()
       
-      lo = round(avg - std * 2)
-      me = round(avg)
-      hi = round(avg + std * 2)
+      lo = avg - std * 2
+      me = avg
+      hi = avg + std * 2
       bw = (hi - lo) / me
       pos = (priceDf.iloc[idx]['close'] - lo) / (hi - lo)
       priceDf.at[idx, 'low'] = lo
@@ -75,5 +74,5 @@ for ticker in tickers:
     bollDf.to_sql(name='boll', con=db_connection, if_exists='append', index=True, index_label="date")        
     conn.close()
   except Exception as ex1:
-    print('ex1', ex1)
+    print('ex1', traceback.format_exc(), ex1)
     pass

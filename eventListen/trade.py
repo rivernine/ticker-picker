@@ -15,7 +15,7 @@ PW = 'root'
 # 텔레그램 정보
 bot_token = '2070032123:AAG9uPgrcDBRYQApPV1p1I0i4EoQCD3tWiw'
 bot = telegram.Bot(token = bot_token)
-chat_id = bot.getUpdates()[-1].message.chat.id
+chat_id = 2065271401
 
 ### Back test 파라미터
 ## 투자금 / 분할
