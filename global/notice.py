@@ -58,9 +58,10 @@ try:
   db.close()
   sumDf = pd.DataFrame(cursor.fetchall()).rename(columns={0:'date', 1:'symbol', 2:'close', 3:'low', 4:'medium', 5:'high', 6:'bandWidth', 7:'position', 8: 'tp', 9: 'mfi', 10: 'mfi_diff'})
   sumDf.set_index('symbol', drop=True, inplace=True)
-  for idx in sumDf.index:    
+  for idx in sumDf.index:        
     row = sumDf.loc[idx].copy()
     symbol = row.name
+    print(symbol)
     ############################
     ## BID STEP    
     if row['position'] <= position_bid and row['mfi'] <= mfi_bid and row['mfi'] > 0 and row['mfi_diff'] > 0:

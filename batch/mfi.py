@@ -15,26 +15,27 @@ db = pymysql.connect(host=ADDR, port=int(PORT), user=ID, passwd=PW, db=DB, chars
 cursor = db.cursor()
 
 ### 3. MFI 최신화
-print(">> 3. MFI 최신화")
+print(">> 3. Update MFI")
 
 # 3.0. 티커 조회
-print("3.0. 티커 조회")
+print("3.0. Get ticker list")
 cursor.execute("SELECT DISTINCT ticker FROM stocks_price")
 tickers = list(map(lambda x: x[0], cursor.fetchall()))
 
 # 3.1. 업데이트 기간 설정
-print("3.1. 업데이트 기간 설정")
+print("3.1. Set date")
 date = str(datetime.now().date()).replace('-', '')
-print("기간: (%s)" %(date))
+print("Date: (%s)" %(date))
 
 # 3.2. 기존 데이터 제거
-print("3.2. 기존 데이터 제거 (%s)" %(date))
+print("3.2. Delete old data (%s)" %(date))
 cursor.execute("DELETE FROM mfi WHERE date =" + date)
 db.commit()
 
 # 3.3. 새로운 데이터 업데이트
-print("3.3. 새로운 데이터 업데이트 (%s)" %(date))
+print("3.3. Update new data (%s)" %(date))
 day = 10
+print(tickers)
 for ticker in tickers:
   try:
     # Get ticker's price
@@ -44,8 +45,8 @@ for ticker in tickers:
     # Set Dataframe
     priceDf['period'] = day
     priceDf['tp'] = 0
-    priceDf['mfi'] = 0
-    priceDf['mfi_diff'] = 0
+    priceDf['mfi'] = 0.0
+    priceDf['mfi_diff'] = 0.0
     # Set typical price
     for idx in range(0, len(priceDf)):
       row = priceDf.iloc[idx]
@@ -63,7 +64,7 @@ for ticker in tickers:
           positiveRMF += today['tp'] * today['volume']
         elif today['tp'] < yesterday['tp']:
           negativeRMF += today['tp'] * today['volume']
-      MFI = round(positiveRMF / (positiveRMF + negativeRMF) * 100)
+      MFI = positiveRMF / (positiveRMF + negativeRMF) * 100
       priceDf.at[idx, 'mfi'] = MFI
       if idx > 0:
         priceDf.at[idx - 1, 'mfi_diff'] = priceDf.iloc[idx - 1]['mfi'] - MFI
@@ -72,6 +73,7 @@ for ticker in tickers:
     conn = db_connection.connect()
     mfiDf[:1].to_sql(name='mfi', con=db_connection, if_exists='append', index=True, index_label="date")        
     conn.close()
+    db.commit()
   except Exception as ex1:
     print('ex1', ex1, ticker)
     pass

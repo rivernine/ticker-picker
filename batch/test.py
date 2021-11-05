@@ -1,1 +1,0 @@
-print("batch/test.py")

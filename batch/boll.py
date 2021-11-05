@@ -15,26 +15,27 @@ db = pymysql.connect(host=ADDR, port=int(PORT), user=ID, passwd=PW, db=DB, chars
 cursor = db.cursor()
 
 ### 2. 볼린저밴드 최신화
-print(">> 2. 볼린저 밴드 최신화")
+print(">> 2. Update bollinger band")
 
 # 2.0. 티커 조회
-print("2.0. 티커 조회")
+print("2.0. Get ticker list")
 cursor.execute("SELECT DISTINCT ticker FROM stocks_price")
 tickers = list(map(lambda x: x[0], cursor.fetchall()))
 
 # 2.1. 업데이트 기간 설정
-print("2.1. 업데이트 기간 설정")
+print("2.1. Set the date")
 date = str(datetime.now().date()).replace('-', '')
-print("기간: (%s)" %(date))
+print("Date: (%s)" %(date))
 
 # 2.2. 기존 데이터 제거
-print("2.2. 기존 데이터 제거 (%s)" %(date))
+print("2.2. Delete old data (%s)" %(date))
 cursor.execute("DELETE FROM boll WHERE date =" + date)
 db.commit()
 
 # 2.3. 새로운 데이터 업데이트
-print("2.3. 새로운 데이터 업데이트 (%s)" %(date))
+print("2.3. Update new data (%s)" %(date))
 day = 20
+print(tickers)
 for ticker in tickers:
   try:
     # Get ticker's price
@@ -72,6 +73,7 @@ for ticker in tickers:
     conn = db_connection.connect()
     bollDf[:1].to_sql(name='boll', con=db_connection, if_exists='append', index=True, index_label="date")        
     conn.close()
+    db.commit()
   except Exception as ex1:
     print('ex1', ex1)
     pass

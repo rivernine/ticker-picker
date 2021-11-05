@@ -21,6 +21,7 @@ chat_id = 2065271401
 ## 투자금 / 분할
 total_amount, step = 10000000, 5
 trade_amount = total_amount / step
+trade_amount = 300000
 ## Boundary
 position_bid = 0.1
 position_ask = 0.8
@@ -100,14 +101,15 @@ try:
     if row['position'] <= position_bid and row['mfi'] <= mfi_bid and row['mfi'] > 0 and row['mfi_diff'] > 0:
       # 2.1. 매수기회포착
       print("\n2.1. It's time to Bid!!! (%s)" %(ticker))
-      bot.sendMessage(chat_id = chat_id, text="매수기회포착 (%s)" %(ticker))
+      # bot.sendMessage(chat_id = chat_id, text="[%s] 매수기회포착 (%s)" %(date, ticker))
       # 2.2. 매수여부확인
       print("2.2. Check already bid (%s)" %(ticker))      
       if ticker in basketDf.index:
         print("  [INFO] Already bid... (%s)" %(ticker))
-        bot.sendMessage(chat_id = chat_id, text="[INFO] 이미 매수한 종목입니다. (%s)" %(ticker))        
+        # bot.sendMessage(chat_id = chat_id, text="[INFO] 이미 매수한 종목입니다. (%s)" %(ticker))        
       # 매수
       elif ticker not in basketDf.index and len(basketDf) < step:
+        bot.sendMessage(chat_id = chat_id, text="[%s] 매수기회포착 (%s)" %(date, ticker))
         if my_amount >= trade_amount:
           # 2.3. 매수
           print("2.3. Bid (%s)" %(ticker))      
@@ -117,7 +119,7 @@ try:
           print("2.3.1. Calculate bid volume (%s)" %(ticker))      
           price = row['close']
           volume = round(trade_amount // price)
-          print("%s: %s원 %s주" %(ticker, price, volume))
+          print("  [%s] %sKRW : %s" %(ticker, price, volume))
           if volume > 0:
             # 2.3.2. 키움증권매수
             print("2.3.2. Bid by kiwoom (%s)" %(ticker))                  
@@ -155,7 +157,7 @@ try:
       if row['position'] >= position_ask or row['mfi'] >= mfi_ask:
         # 3.1. 매도기회포착
         print("\n3.1. It's time to Ask!!! (%s)" %(ticker))
-        bot.sendMessage(chat_id = chat_id, text="매도기회포착 (%s)" %(ticker))
+        bot.sendMessage(chat_id = chat_id, text="[%s] 매도기회포착 (%s)" %(date, ticker))
         # 3.2. 매도
         print("3.2. Ask (%s)" %(ticker))      
         print("  [INFO] Let's Ask!! (%s)" %(ticker))
@@ -163,7 +165,7 @@ try:
         # 3.2.1. 매도수량계산
         print("3.2.1. Calculate ask volume (%s)" %(ticker))
         volume = info['volume']
-        print("%s: %s원 %s주" %(ticker, price, volume))
+        print("  [%s] %sKRW : %s" %(ticker, price, volume))
         # 3.2.2. 키움증권매도
         print("3.2.2. Ask by kiwoom (%s)" %(ticker))  
         if kiwoom.get_status(kiwoom_conn):

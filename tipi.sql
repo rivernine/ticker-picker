@@ -205,13 +205,13 @@ FROM (
   FROM (       
     SELECT *       
     FROM boll       
-    WHERE date = "20211103"       
+    WHERE date = "20211105"       
     AND period = 20     
     ) AS BOL     
 JOIN (       
   SELECT ticker, tp, mfi, mfi_diff       
   FROM mfi       
-  WHERE date = "20211103"       
+  WHERE date = "20211105"       
   AND period = 10     
   ) AS MFI     
 ON (BOL.ticker = MFI.ticker)   
