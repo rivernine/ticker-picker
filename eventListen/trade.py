@@ -109,8 +109,8 @@ try:
         # bot.sendMessage(chat_id = chat_id, text="[INFO] 이미 매수한 종목입니다. (%s)" %(ticker))        
       # 매수
       elif ticker not in basketDf.index and len(basketDf) < step:
-        bot.sendMessage(chat_id = chat_id, text="[%s] 매수기회포착 (%s)" %(date, ticker))
         if my_amount >= trade_amount:
+          bot.sendMessage(chat_id = chat_id, text="[%s] 매수기회포착 (%s)" %(date, ticker))
           # 2.3. 매수
           print("2.3. Bid (%s)" %(ticker))      
           print("  [INFO] Let's Bid!! (%s)" %(ticker))
