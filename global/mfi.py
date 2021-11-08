@@ -36,6 +36,7 @@ print("Period: (%s - %s)" %(start, end))
 # 3.3. 새로운 데이터 업데이트
 print("2.3. Update new data (%s - %s)" %(start, end))
 day = 10
+print(symbols)
 for symbol in symbols:
   try:
     cursor.execute("SELECT * FROM stocks_price WHERE symbol = '" + symbol + "' ORDER BY date DESC")
@@ -71,6 +72,7 @@ for symbol in symbols:
     conn = db_connection.connect()
     mfiDf.to_sql(name='mfi', con=db_connection, if_exists='append', index=True, index_label="date")        
     conn.close()
+    db.commit()
   except Exception as ex1:
     print('ex1', ex1, symbol)
     pass

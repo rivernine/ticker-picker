@@ -37,6 +37,7 @@ print("Period: (%s - %s)" %(start, end))
 # 2.3. 새로운 데이터 업데이트
 print("2.3. Update new data (%s - %s)" %(start, end))
 day = 20
+print(symbols)
 for symbol in symbols:
   try:
     cursor.execute("SELECT * FROM stocks_price WHERE symbol = '" + symbol + "' ORDER BY date DESC")
@@ -73,6 +74,9 @@ for symbol in symbols:
     conn = db_connection.connect()
     bollDf.to_sql(name='boll', con=db_connection, if_exists='append', index=True, index_label="date")        
     conn.close()
+    db.commit()
   except Exception as ex1:
     print('ex1', traceback.format_exc(), ex1)
     pass
+
+db.close()

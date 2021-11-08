@@ -27,8 +27,8 @@ db = pymysql.connect(host=ADDR, port=int(PORT), user=ID, passwd=PW, db=DB, chars
 cursor = db.cursor()
 cursor.execute("TRUNCATE stocks_price")
 db.commit()
-db.close()
 
+print(symbols)
 for idx in range(0, len(symbols), 50):
   symbol_list = symbols[idx:idx+50]
   df = yf.download(symbol_list, start = '2021-08-01')
@@ -43,10 +43,12 @@ for idx in range(0, len(symbols), 50):
       conn = db_connection.connect()
       symbolDf.to_sql(name='stocks_price', con=db_connection, if_exists='append', index=True, index_label="date")
       conn.close()
+      db.commit()
     except Exception as ex:
       print(ex, symbol)
       pass
 
+db.close()
 # df = fdr.DataReader('BTC/KRW', '2021-07-01').rename(columns={'Open': 'open', 'High':'high', 'Low':'low', 'Close':'close', 'Volume':'volume'}).drop(['Change'], axis=1)
 # df['symbol'] = 'BTC/KRW'
 # df = df[['symbol', 'open', 'high', 'low', 'close', 'volume']]
