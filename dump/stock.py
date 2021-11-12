@@ -15,7 +15,7 @@ db = pymysql.connect(host=ADDR, port=int(PORT), user=ID, passwd=PW, db=DB, chars
 cursor = db.cursor()
 
 ### 1. 종목정보덤프
-print(">> 1. DUMP cap >= 500000000000 & KOSPI")
+print(">> 1. DUMP cap >= 1000000000000 & KOSPI")
 
 # 1.0. 기존 데이터 제거
 print("1.0. Delete old data")
@@ -36,7 +36,7 @@ capDf = stock.get_market_cap_by_ticker(str(datetime.now().date()).replace('-', '
 capDf.index.names = ['ticker']
 capDf = capDf.rename(columns={'종가':'close', '시가총액':'cap'}).drop(['거래량', '거래대금', '상장주식수'], axis=1)
 basketDf = capDf.loc[basketTickers].copy()
-capDf = capDf[capDf['cap'] >= 500000000000]
+capDf = capDf[capDf['cap'] >= 1000000000000]
 totalDf = pd.concat([basketDf,capDf]).drop_duplicates()
 db_connection = create_engine('mysql+pymysql://'+ ID +':'+ PW +'@'+ ADDR +':'+ PORT +'/'+ DB, encoding='utf-8', pool_pre_ping=True)
 conn = db_connection.connect()

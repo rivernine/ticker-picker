@@ -24,7 +24,7 @@ trade_amount = total_amount / step
 trade_amount = 300000
 ## Boundary
 position_bid = 0.1
-position_ask = 0.8
+position_ask = 0.9
 mfi_bid = 10
 mfi_ask = 90
 
@@ -39,8 +39,8 @@ print("\n0.1. Get my amount")
 my_amount = kiwoom.get_amount(kiwoom_conn)
 print("My amount: %s" %(my_amount))
 
-### 1. 종목(cap >= 5천억 && KOSPI)조회 및 거래
-print("\n>> 1. Get ticker(cap >= 500000000000 && KOSPI) & Trade")
+### 1. 종목(cap >= 10천억 && KOSPI)조회 및 거래
+print("\n>> 1. Get ticker(cap >= 1000000000000 && KOSPI) & Trade")
 
 # 1.0. 매수종목조회
 print("\n1.0. Get bid basket")
