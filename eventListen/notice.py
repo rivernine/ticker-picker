@@ -27,8 +27,6 @@ print("\n>> 1. Get ticker(cap >= 1000000000000 && KOSPI) & Trade")
 print("\n1.1. Set the date")
 date = str(datetime.now().date()).replace('-', '')
 print("Date: (%s)" %(date))
-date = '20211111'
-
 try:
   # 1.2. 티커별 종합정보조회
   print("\n1.2. Get info tickers")
