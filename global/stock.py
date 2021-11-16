@@ -28,6 +28,17 @@ cursor = db.cursor()
 cursor.execute("TRUNCATE stocks_price")
 db.commit()
 
+### 3. BTC
+df = fdr.DataReader('BTC/KRW', '2021-07-01').rename(columns={'Open': 'open', 'High':'high', 'Low':'low', 'Close':'close', 'Volume':'volume'}).drop(['Change'], axis=1)
+df['symbol'] = 'BTC/KRW'
+df = df[['symbol', 'open', 'high', 'low', 'close', 'volume']]
+db_connection = create_engine('mysql+pymysql://'+ ID +':'+ PW +'@'+ ADDR +':'+ PORT +'/'+ DB, encoding='utf-8', pool_pre_ping=True)
+conn = db_connection.connect()
+df.to_sql(name='stocks_price', con=db_connection, if_exists='append', index=True, index_label="date")
+conn.close()
+db.commit()
+
+### 4. GLOBAL
 print(symbols)
 for idx in range(0, len(symbols), 50):
   symbol_list = symbols[idx:idx+50]
@@ -47,8 +58,4 @@ for idx in range(0, len(symbols), 50):
     except Exception as ex:
       print(ex, symbol)
       pass
-
 db.close()
-# df = fdr.DataReader('BTC/KRW', '2021-07-01').rename(columns={'Open': 'open', 'High':'high', 'Low':'low', 'Close':'close', 'Volume':'volume'}).drop(['Change'], axis=1)
-# df['symbol'] = 'BTC/KRW'
-# df = df[['symbol', 'open', 'high', 'low', 'close', 'volume']]
