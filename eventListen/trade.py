@@ -143,10 +143,10 @@ try:
             tx_count += 1
           else:
             print("  [ERROR] Price is so expensive.. %s" %(trade_amount))
-            bot.sendMessage(chat_id = chat_id, text="[ERROR] 금액이 %s원 이상입니다." %(trade_amount))
+            # bot.sendMessage(chat_id = chat_id, text="[ERROR] 금액이 %s원 이상입니다." %(trade_amount))
         else:
           print("  [ERROR] Not enough money. %s" %(my_amount))
-          bot.sendMessage(chat_id = chat_id, text="[ERROR] 잔액이 부족합니다. 주문가능금액: %s원" %(my_amount))
+          # bot.sendMessage(chat_id = chat_id, text="[ERROR] 잔액이 부족합니다. 주문가능금액: %s원" %(my_amount))
     ############################
     ## ASK STEP    
     if ticker in basketDf.index:      
