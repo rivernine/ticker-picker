@@ -1,6 +1,6 @@
 import pandas as pd
 import pymysql
-from datetime import datetime
+from datetime import datetime, timedelta
 import traceback
 import telegram
 
@@ -25,7 +25,7 @@ print("\n>> 1. Get ticker(cap >= 1000000000000 && KOSPI) & Trade")
 
 # 1.1. 기간 설정
 print("\n1.1. Set the date")
-date = str(datetime.now().date()).replace('-', '')
+date = str(datetime.now().date() - timedelta(days=1)).replace('-', '')
 print("Date: (%s)" %(date))
 try:
   # 1.2. 티커별 종합정보조회
