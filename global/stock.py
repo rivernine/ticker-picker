@@ -38,6 +38,7 @@ db.commit()
 ### 3. BTC
 binance = ccxt.binance()
 for coin in coins:
+  time.slepp(0.1)
   ohlcv = binance.fetch_ohlcv(coin, timeframe='1d', limit=100)
   df = pd.DataFrame(ohlcv, columns = ['date', 'open', 'high', 'low', 'close', 'volume'])
   df['date'] = pd.to_datetime(df['date'], unit='ms')
@@ -60,8 +61,8 @@ for coin in coins:
 print(symbols)
 for idx in range(0, len(symbols), 50):
   symbol_list = symbols[idx:idx+50]
-  df = yf.download(symbol_list, start = '2021-08-01')
   time.sleep(0.1)
+  df = yf.download(symbol_list, start = '2021-08-01')
   swapDf = df.swaplevel(0, 1, axis=1)
   for symbol in symbol_list:
     symbolDf = swapDf[symbol].rename(columns={'Open': 'open', 'High':'high', 'Low':'low', 'Close':'close', 'Volume':'volume'}).drop(['Adj Close'], axis=1)
