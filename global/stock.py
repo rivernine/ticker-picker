@@ -45,6 +45,7 @@ for coin in coins:
   df['date'] = pd.to_datetime(df['date'], unit='ms')
   df = df.set_index(['date'])
   df['symbol'] = coin
+  df = df.drop(str(datetime.now().date()))
   db_connection = create_engine('mysql+pymysql://'+ ID +':'+ PW +'@'+ ADDR +':'+ PORT +'/'+ DB, encoding='utf-8', pool_pre_ping=True)
   conn = db_connection.connect()
   df.to_sql(name='stocks_price', con=db_connection, if_exists='append', index=True, index_label="date")
