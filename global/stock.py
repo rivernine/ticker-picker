@@ -37,12 +37,14 @@ db.commit()
 
 ### 3. BTC
 binance = ccxt.binance()
+print(coins)
 for coin in coins:
-  time.slepp(0.1)
+  time.sleep(0.1)
   ohlcv = binance.fetch_ohlcv(coin, timeframe='1d', limit=100)
   df = pd.DataFrame(ohlcv, columns = ['date', 'open', 'high', 'low', 'close', 'volume'])
   df['date'] = pd.to_datetime(df['date'], unit='ms')
   df = df.set_index(['date'])
+  df['symbol'] = coin
   db_connection = create_engine('mysql+pymysql://'+ ID +':'+ PW +'@'+ ADDR +':'+ PORT +'/'+ DB, encoding='utf-8', pool_pre_ping=True)
   conn = db_connection.connect()
   df.to_sql(name='stocks_price', con=db_connection, if_exists='append', index=True, index_label="date")
