@@ -1,7 +1,6 @@
 # ticker-picker
 
 ## <center>Today's ticker: 👀🎉
-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
 ---
 
 ## Bollinger Band
